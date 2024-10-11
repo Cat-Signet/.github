@@ -25,7 +25,8 @@ CatSignet is an open-source, OP_CAT-enabled Bitcoin signet network designed as a
 
 - **Protocol Development**: Test new protocols and smart contracts that leverage OP_CAT functionality.
 - **Application Testing**: Developers can run their applications on CatSignet to ensure they work correctly before deploying to mainnets.
-- **Education and Learning**: CatSignet is an excellent resource for those looking to learn about Bitcoin scripting, OP_CAT, and blockchain development in a risk-free environment.
+- **Education and Learning**: CatSignet is an excellent resource for those looking to learn about Bitcoin scripting & OP_CAT in a risk-free environment.
+- **Verification**: Testing different verification methods and using CatSignet as a settlement layer to test features before deploying on Bitcoin L1.
 
 ### **Get Involved**
 
