@@ -29,7 +29,7 @@ CatSignet is an open-source, OP_CAT-enabled Bitcoin signet network designed as a
 
 ### **Get Involved**
 
-- **Join the Community**: Connect with us on our [GitHub]((https://github.com/Cat-Signet)), or [Telegram](https://www.notion.so/CatSignet-An-OP_CAT-Enabled-Bitcoin-Signet-Public-Good-11c611d75bea80aa91e2f500dd079066?pvs=21) channels to collaborate and stay updated.
+- **Join the Community**: Connect with us on our [GitHub](https://github.com/Cat-Signet), or [Telegram](https://www.notion.so/CatSignet-An-OP_CAT-Enabled-Bitcoin-Signet-Public-Good-11c611d75bea80aa91e2f500dd079066?pvs=21) channels to collaborate and stay updated.
 - **Contribute to the Codebase**: Explore our open-source repositories and contribute code, documentation, or report issues.
 - **Use the Faucet**: Access our faucet to obtain testnet coins and start experimenting on CatSignet.
 
