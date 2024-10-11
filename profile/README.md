@@ -74,13 +74,13 @@ Before starting your node, you need to create a configuration file to properly j
 1. **Create a new directory for your Bitcoin data:**
 
     ```bash
-    mkdir -p ~/.bitcoin/catnet
+    mkdir -p ~/.bitcoin/catsignet
     ```
 
 2. **Create the `bitcoin.conf` file:**
 
     ```bash
-    nano ~/.bitcoin/catnet/bitcoin.conf
+    nano ~/.bitcoin/catsignet/bitcoin.conf
     ```
 
 3. **Add the following configuration to the file:**
@@ -98,12 +98,12 @@ Before starting your node, you need to create a configuration file to properly j
     # Custom signet challenge
     signetchallenge=5121027be9dab7dfc2d1b9aac03f883b9a229fc9c298770dec626b2acbf39e9b6e0e0c51ae
     # Add the seed node
-    addnode=catnet.btcwild.life
+    addnode=n.catsignet.com
 
     # RPC settings
     rpcbind=127.0.0.1
     rpcallowip=127.0.0.0/8
-    rpcport=38332
+    rpcport=26657
     rpcuser=XXX
     rpcpassword=XXX
     ```
@@ -116,7 +116,7 @@ Using `bitcoind`:
 Run the following command in the terminal from the `bin` directory of your Bitcoin Core installation:
 
 ```bash
-./bitcoind -datadir=~/.bitcoin/catnet
+./bitcoind -datadir=~/.bitcoin/catsignet
 ```
 
 This command will start your Bitcoin node and connect it to the CatSignet.
@@ -126,7 +126,7 @@ OR
 Using `bitcoin-qt`: Run the following command in the terminal from the `bin` directory of your Bitcoin Core installation:
 
 ```bash
-./bitcoin-qt -datadir=~/.bitcoin/catnet
+./bitcoin-qt -datadir=~/.bitcoin/catsignet
 ```
 
 ### Step 4: Verifying the Connection
@@ -134,7 +134,7 @@ Using `bitcoin-qt`: Run the following command in the terminal from the `bin` dir
 After your node starts, you can verify it's properly connecting to the network by checking the peer information:
 
 ```bash
-./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX getpeerinfo
+./bitcoin-cli -rpcport=26657 -rpcuser=XXX -rpcpassword=XXX getpeerinfo
 ```
 
 You should see the CatSignet node `35.192.139.170` listed among the peers.
@@ -144,7 +144,7 @@ You should see the CatSignet node `35.192.139.170` listed among the peers.
 You can create a new wallet to interact with the CatSignet using the following command:
 
 ```bash
-./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX -named createwallet wallet_name="test" descriptors=false
+./bitcoin-cli -rpcport=26657 -rpcuser=XXX -rpcpassword=XXX -named createwallet wallet_name="test" descriptors=false
 ```
 
 ### Step 6: Generate a New Address
@@ -152,7 +152,7 @@ You can create a new wallet to interact with the CatSignet using the following c
 You can generate a new address to receive funds on the CatSignet:
 
 ```bash
-./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX getnewaddress
+./bitcoin-cli -rpcport=26657 -rpcuser=XXX -rpcpassword=XXX getnewaddress
 ```
 
 ### **Our Vision**
