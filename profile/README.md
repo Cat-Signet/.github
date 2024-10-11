@@ -33,6 +33,128 @@ CatSignet is an open-source, OP_CAT-enabled Bitcoin signet network designed as a
 - **Contribute to the Codebase**: Explore our open-source repositories and contribute code, documentation, or report issues.
 - **Use the Faucet**: Access our faucet to obtain testnet coins and start experimenting on CatSignet.
 
+## Joining the CatSignet
+
+### Prerequisites
+
+- Basic command-line interface skills
+- Administrative permissions on your machine
+- An internet connection
+
+### Step 1: Download and Install Bitcoin Core
+
+You have two options to download and install Bitcoin Core:
+
+- **Download the pre-built binaries**: You can download the pre-built binaries from the Bitcoin Inquisition release and use them directly.
+- **Build from source**: You can build Bitcoin Inquisition from source code ([this release](https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v27.0-inq)).
+
+First, you need to download the appropriate Bitcoin Core binaries for your system. Below are links for commonly used systems:
+
+- **Linux (aarch64)**: [Download v27.0 for aarch64](https://github.com/bitcoin-inquisition/bitcoin/releases/download/v27.0-inq/bitcoin-27.0-inq-aarch64-linux-gnu.tar.gz)
+- **macOS (arm64)**: [Download v27.0 for arm64](https://github.com/bitcoin-inquisition/bitcoin/releases/download/v27.0-inq/bitcoin-27.0-inq-arm64-apple-darwin.tar.gz)
+
+You can find links for other systems [here](https://github.com/bitcoin-inquisition/bitcoin/releases/tag/v27.0-inq).
+
+After downloading the tar.gz file for your system, extract it using the following command:
+
+```bash
+tar -xzf bitcoin-27.0-inq-<platform>.tar.gz
+```
+
+Navigate to the extracted directory:
+
+```bash
+cd bitcoin-27.0-inq/bin
+```
+
+### Step 2: Configuration
+
+Before starting your node, you need to create a configuration file to properly join the CatSignet.
+
+1. **Create a new directory for your Bitcoin data:**
+
+    ```bash
+    mkdir -p ~/.bitcoin/catnet
+    ```
+
+2. **Create the `bitcoin.conf` file:**
+
+    ```bash
+    nano ~/.bitcoin/catnet/bitcoin.conf
+    ```
+
+3. **Add the following configuration to the file:**
+
+    ```ini
+    # General settings
+    signet=1
+    txindex=1
+    server=1
+    daemon=1
+    deprecatedrpc=create_bdb
+
+    # Signet settings
+    [signet]
+    # Custom signet challenge
+    signetchallenge=5121027be9dab7dfc2d1b9aac03f883b9a229fc9c298770dec626b2acbf39e9b6e0e0c51ae
+    # Add the seed node
+    addnode=catnet.btcwild.life
+
+    # RPC settings
+    rpcbind=127.0.0.1
+    rpcallowip=127.0.0.0/8
+    rpcport=38332
+    rpcuser=XXX
+    rpcpassword=XXX
+    ```
+
+    Save and close the file. Replace `rpcuser` and `rpcpassword` with your desired credentials.
+
+### Step 3: Start Your Node
+
+Using `bitcoind`:
+Run the following command in the terminal from the `bin` directory of your Bitcoin Core installation:
+
+```bash
+./bitcoind -datadir=~/.bitcoin/catnet
+```
+
+This command will start your Bitcoin node and connect it to the CatSignet.
+
+OR
+
+Using `bitcoin-qt`: Run the following command in the terminal from the `bin` directory of your Bitcoin Core installation:
+
+```bash
+./bitcoin-qt -datadir=~/.bitcoin/catnet
+```
+
+### Step 4: Verifying the Connection
+
+After your node starts, you can verify it's properly connecting to the network by checking the peer information:
+
+```bash
+./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX getpeerinfo
+```
+
+You should see the CatSignet node `35.192.139.170` listed among the peers.
+
+### Step 5: Create a Wallet
+
+You can create a new wallet to interact with the CatSignet using the following command:
+
+```bash
+./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX -named createwallet wallet_name="test" descriptors=false
+```
+
+### Step 6: Generate a New Address
+
+You can generate a new address to receive funds on the CatSignet:
+
+```bash
+./bitcoin-cli -rpcport=38332 -rpcuser=XXX -rpcpassword=XXX getnewaddress
+```
+
 ### **Our Vision**
 
 We believe in empowering the Bitcoin community by providing the tools and platforms necessary for innovation. CatSignet aims to be the cornerstone for developers to push the boundaries of what's possible on Bitcoin, fostering an ecosystem of collaboration, learning, and advancement.
