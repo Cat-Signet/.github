@@ -145,7 +145,7 @@ After your node starts, you can verify it's properly connecting to the network b
 ./bitcoin-cli -rpcport=26657 -rpcuser=XXX -rpcpassword=XXX getpeerinfo
 ```
 
-You should see the CatSignet node `35.192.139.170` listed among the peers.
+You should see the CatSignet node `34.135.222.112` listed among the peers.
 
 ### Step 5: Create a Wallet
 
