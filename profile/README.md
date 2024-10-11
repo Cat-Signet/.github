@@ -155,6 +155,6 @@ You can generate a new address to receive funds on the CatSignet:
 ./bitcoin-cli -rpcport=26657 -rpcuser=XXX -rpcpassword=XXX getnewaddress
 ```
 
-### **Our Vision**
+### **Vision**
 
-We believe in empowering the Bitcoin community by providing the tools and platforms necessary for innovation. CatSignet aims to be the cornerstone for developers to push the boundaries of what's possible on Bitcoin, fostering an ecosystem of collaboration, learning, and advancement.
+Empowering the Bitcoin community by providing the tools and platforms necessary for innovation. CatSignet aims to be the cornerstone for developers to push the boundaries of what's possible on Bitcoin, fostering an ecosystem of collaboration, learning, and advancement.
